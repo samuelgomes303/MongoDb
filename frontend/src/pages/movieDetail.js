@@ -9,8 +9,10 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const API_URL = "http://localhost:5000";
+
   useEffect(() => {
-    axios.get(`/api/movies/${id}`)
+    axios.get(`${API_URL}/api/movies/${id}`)
       .then(response => {
         setMovie(response.data);
         setLoading(false);

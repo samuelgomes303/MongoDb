@@ -1,4 +1,3 @@
-
 import Movie from './movieModel.js';
 
 export const getMovies = async (req, res) => {
