@@ -3,7 +3,8 @@ import axios from 'axios';
 import MovieCard from '../components/movieCard';
 import { Grid, Container, Typography, Pagination, CircularProgress, Box } from '@mui/material';
 
-const API_URL = "http://localhost:5000"; 
+
+const API_URL = process.env.NODE_ENV === 'development' ?  'http://localhost:5000': '';
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);

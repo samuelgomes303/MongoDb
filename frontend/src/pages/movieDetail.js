@@ -3,13 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Typography, Container, CircularProgress, Box, Paper, Button } from '@mui/material';
 
+const API_URL = process.env.NODE_ENV === 'development' ?  'http://localhost:5000': '';
+
+
 const MovieDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = "http://localhost:5000";
 
   useEffect(() => {
     axios.get(`${API_URL}/api/movies/${id}`)
