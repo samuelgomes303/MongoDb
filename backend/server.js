@@ -10,10 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rotas
+
 app.use('/api', movieRoutes);
 
-// Conexão à base de dados
+// conexao a base de dados
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);

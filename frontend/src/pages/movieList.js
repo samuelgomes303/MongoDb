@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieCard from '../components/movieCard';
 import { Grid, Container, Typography, Pagination, CircularProgress, Box } from '@mui/material';
 
-const API_URL = "http://localhost:5000"; // Troca para o teu backend em produção se necessário
+const API_URL = "http://localhost:5000"; 
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -28,7 +28,6 @@ const MovieList = () => {
 
   useEffect(() => {
     fetchMovies(page);
-    // eslint-disable-next-line
   }, [page]);
 
   return (
